@@ -1,0 +1,24 @@
+version: "3.1"
+
+stories:
+
+- story: play 1
+  steps:
+  - intent: greet
+  - action: utter_start
+  - intent: inform
+  - action: action_play_rps
+  - action: utter_W_again
+
+
+- story: play again
+  steps:
+  - action: utter_W_again
+  - intent: affirm
+  - action: utter_start
+
+- story: no play again
+  steps:
+  - action: utter_W_again
+  - intent: deny
+  - action: utter_goodbye

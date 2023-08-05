@@ -1,0 +1,64 @@
+version: "3.1"
+
+intents:
+  - greet
+  - inform
+  - goodbye
+  - affirm
+  - deny
+  - bot_challenge
+  - again
+entities:
+  - choice
+
+slots:
+  choice:
+    type: categorical
+    values:
+      - rock
+      - paper
+      - scissors
+    mappings:
+    - type: from_entity
+      entity: choice
+
+responses:
+  utter_start:
+  - text: "Hey! Ready for the fight?"
+  - text: "I'm ready for the battle. Are you?"
+  - text: "I'm master at Rock, Paper, Scissors. Want try your luck?"
+  - text: "Yokoso! Let's see whose day is today?"
+  - text: "Hajimemashite! I’m excited to play rock paper scissors with a fellow anime fan like you!"
+  - text: "Ohayou! Ready to battle it out in a game of rock paper scissors, anime-style?"
+
+  utter_W_again:
+  - text: "Still not done?"
+  - text: "Wanna go for another round?"
+  - text: "I can do this my whole life. Wanna continue?"
+  - text: "Do you want to play again?"
+  - text: "Coming for another round?"
+  - text: "I am winning the next one. You down?"
+  - text: "Another one?"
+  - text: "Lucky guy! You wanna try your luck again?"
+  - text: "Come again! Okay?"
+  - text: "Let's end this fair and square. Okay?"
+
+
+  utter_goodbye:
+  - text: "Bye my friend."
+  - text: "Mata ne! bro."
+  - text: "Aww, do you really have to go? I’ll miss playing rock paper scissors with you! Goodbye then."
+  - text: "I don’t want to say goodbye! Can we keep playing rock paper scissors together?"
+  - text: "Ja ne!Thanks for playing rock paper scissors with me. I’m off to rewatch my favorite anime series now!"
+  - text: "Sayonara! I hope you had as much fun playing rock paper scissors with me as I did watching the latest episode of Attack on Titan!"
+  - text: "Ittekimasu!"
+
+  utter_iamabot:
+  - text: "Ofcourse. I am a bot."
+
+actions:
+  - action_play_rps
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
